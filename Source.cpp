@@ -122,6 +122,9 @@ DWORD FindLoadLibrary(HANDLE hProc, HANDLE hThread, ULONG_PTR& loadLibAddr) {
 	amount = size / sizeof(HMODULE);
 
 	hModules = (HMODULE*)malloc(size); //memory leak, if failed before found LoadLibrary()
+	if (hModules == nullptr) {
+		return 1;
+	}
 
 	//Get modules
 	IF_FAIL_RET_NZ_SUCCSESS(eStatus, EnumProcessModules(hProc, hModules, size, &needed));
@@ -156,6 +159,10 @@ DWORD FindLoadLibrary(HANDLE hProc, HANDLE hThread, ULONG_PTR& loadLibAddr) {
 
 			ULONG_PTR* functionNamesRVA = (ULONG_PTR*)malloc(sizeof(ULONG_PTR) * numOfFuncs);//memory leak, if failed before found LoadLibrary()
 			ULONG_PTR* functionAddrsRVA = (ULONG_PTR*)malloc(sizeof(ULONG_PTR) * numOfFuncs);//memory leak, if failed before found LoadLibrary()
+
+			if (functionNamesRVA == nullptr || functionAddrsRVA == nullptr) {
+				return 1;
+			}
 
 			IF_FAIL_RET(eStatus, ReadRemote<ULONG_PTR>(hProc, (ULONG_PTR)(moduleBase + moduleExport.AddressOfNames), functionNamesRVA, tempNumOfFuncs));
 			IF_FAIL_RET(eStatus, ReadRemote<ULONG_PTR>(hProc, (ULONG_PTR)(moduleBase + moduleExport.AddressOfFunctions), functionAddrsRVA, tempNumOfFuncs));
