@@ -1,3 +1,6 @@
+git:
+https://github.com/TAPAKAH20/DLLInjector
+
 Инжектор с лекций + обработка ошибок
 
 Проверено с dll из лекции, на блокноте
