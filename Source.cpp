@@ -289,7 +289,7 @@ int main(int argc, char* const argv[])
 
 
 	LPCTSTR appName = _T("C:\\Users\\R0ACH\\source\\repos\\DX11_Compute_Tutorial\\DX11_Compute_Tutorial-master\\Debug\\DX11_Compute_Tutorial.exe");
-	WCHAR dllPath[] = L"C:\\Users\\R0ACH\\source\\repos\\DLLInjector\\Debug\\DLL injectable.dll";
+	WCHAR dllPath[] = L"C:\\Users\\R0ACH\\source\\repos\\DLL injectable\\Debug\\DLL injectable.dll";
 	HANDLE hProc = INVALID_HANDLE_VALUE;
 	HANDLE hThread = INVALID_HANDLE_VALUE;
 	ULONG_PTR addresOfEntry = 0;
