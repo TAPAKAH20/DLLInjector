@@ -288,8 +288,8 @@ int main(int argc, char* const argv[])
 {
 
 
-	LPCTSTR appName = _T("C:\\Windows\\SysWOW64\\notepad.exe");
-	WCHAR dllPath[] = L"C:\\Users\\R0ACH\\source\\repos\\DLLInjector\\Debug\\Dll injectable.dll";
+	LPCTSTR appName = _T("C:\\Users\\R0ACH\\source\\repos\\DX11_Compute_Tutorial\\DX11_Compute_Tutorial-master\\Debug\\DX11_Compute_Tutorial.exe");
+	WCHAR dllPath[] = L"C:\\Users\\R0ACH\\source\\repos\\DLLInjector\\Debug\\DLL injectable.dll";
 	HANDLE hProc = INVALID_HANDLE_VALUE;
 	HANDLE hThread = INVALID_HANDLE_VALUE;
 	ULONG_PTR addresOfEntry = 0;
