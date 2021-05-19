@@ -1,5 +1,8 @@
 git:
+injector
 https://github.com/TAPAKAH20/DLLInjector
+dll
+https://github.com/TAPAKAH20/D3D-hook-dll
 
 Инжектор с лекций + обработка ошибок
 
